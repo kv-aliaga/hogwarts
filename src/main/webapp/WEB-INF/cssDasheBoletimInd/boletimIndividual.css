@@ -1,0 +1,91 @@
+/* Configurações de Fundo e Layout */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('img/fundoTela.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.1); /* Efeito de vidro (Glassmorphism) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px; /* Cantos arredondados do modelo 1 */
+    padding: 40px;
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: white;
+}
+
+/* Cabeçalho do Aluno */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+    margin: 5px 0;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+
+.boletim-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+}
+
+.boletim-table th {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.boletim-table td {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05); 
+    font-size: 0.95rem;
+}
+
+
+.boletim-table tr td:first-child { border-radius: 12px 0 0 12px; }
+.boletim-table tr td:last-child { border-radius: 0 12px 12px 0; }
+
+
+.situacao {
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.situacao.aprovado { background: #1a4d43; color: #c5e1a5; }
+.situacao.reprovado { background: #4d1a1a; color: #e1a5a5; }
+
+.observacao {
+    font-style: italic;
+    color: #ccc;
+    font-size: 0.85rem;
+}

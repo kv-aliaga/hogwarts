@@ -15,23 +15,50 @@
 %>
 
 <html>
-    <head>
-        <title>Title</title>
-    </head>
-    <body>
-        <main>
-            <h1><%=boletim.getFirst().getAluno().getNome()%></h1>
-            <h2><%=boletim.getFirst().getCasaHogwarts().getNome()%></h2>
+<head>
+    <link rel="stylesheet" href="css/boletim.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1><%=boletim.get(0).getAluno().getNome()%></h1>
+            <h2><%=boletim.get(0).getCasaHogwarts().getNome()%></h2>
+        </header>
 
-            <%for (Boletim b: boletim) {%>
-            <strong>Professor: </strong> <%=b.getProfessor().getNome()%> <br>
-            <strong>Disciplina: </strong> <%=b.getDisciplina().getNome()%> <br>
-            <strong>Nota 1: </strong> <%=b.getNota1()%> <br>
-            <strong>Nota 2: </strong> <%=b.getNota2()%> <br>
-            <strong>Média: </strong> <%=b.getMedia()%> <br>
-            <strong>Observação: </strong> <%=Formatador.mostrar(b.getObservacao().getObservacao())%> <br>
-            <strong>Situação: </strong> <%=b.getSituacao()%> <br> <br>
-            <%}%>
-        </main>
-    </body>
+        <table class="boletim-table">
+            <thead>
+                <tr>
+                    <th>Disciplina / Prof.</th>
+                    <th>Nota 1</th>
+                    <th>Nota 2</th>
+                    <th>Média</th>
+                    <th>Situação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for (Boletim b: boletim) { 
+                    String statusClass = b.getSituacao().equalsIgnoreCase("Aprovado") ? "aprovado" : "reprovado";
+                %>
+                <tr>
+                    <td>
+                        <strong><%=b.getDisciplina().getNome()%></strong><br>
+                        <small>Prof: <%=b.getProfessor().getNome()%></small>
+                    </td>
+                    <td><%=b.getNota1()%></td>
+                    <td><%=b.getNota2()%></td>
+                    <td><strong><%=b.getMedia()%></strong></td>
+                    <td>
+                        <span class="situacao <%=statusClass%>"><%=b.getSituacao()%></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="observacao">
+                        Obs: <%=Formatador.mostrar(b.getObservacao().getObservacao())%>
+                    </td>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </main>
+</body>
 </html>

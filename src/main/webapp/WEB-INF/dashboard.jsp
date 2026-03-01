@@ -18,45 +18,46 @@
     DecimalFormat df = new DecimalFormat("0.00");
 %>
 
-<html>
-    <head>
-        <title>Title</title>
-    </head>
-    <body>
-        <main>
-            <h1>RANKING</h1>
-            <%int i = 0;
-            for (Map.Entry<String, Double> entrada : dash.getRanking().entrySet()){
-                i++;
-
-                String nome = entrada.getKey();
-                Double media = entrada.getValue();%>
-            <p><strong><%=i%>º <%=nome%></strong>: <%=media%></p>
-            <% }%>
-
-
-            <h1>QUANTIDADE DE ALUNOS</h1>
-            <p><%=dash.getQtdAlunos()%></p>
-
-            <h1>MÉDIA DAS CASAS</h1>
-            <%for (Map.Entry<String, Double> entrada : dash.getMediaCasas().entrySet()){
-                String nome = entrada.getKey();
-                Double media = entrada.getValue();%>
-            <p><strong><%=nome%></strong>: <%=df.format(media)%></p>
-            <% }%>
-
-
-            <h1>QUADRO DE OBSERVAÇÕES</h1>
-            <p><%for (QuadroObservacoes entrada : dash.getQuadroObservacoes()){%></p>
-            <div>
-                <em><%=entrada.getObservacao()%></em>
-                <p>
-                    <h3><%=entrada.getAluno()%> - <%=entrada.getCasa()%></h3>
-                    <strong><%=entrada.getProfessor()%></strong>
-                </p>
+<main>
+    <div class="card">
+        <h1>RANKING</h1>
+        <% int i = 0;
+        for (Map.Entry<String, Double> entrada : dash.getRanking().entrySet()){
+            i++; %>
+            <div class="ranking-item">
+                <span><strong><%=i%>º</strong> <%=entrada.getKey()%></span>
+                <strong><%=entrada.getValue()%></strong>
             </div>
-            <hr>
-            <%}%>
-        </main>
-    </body>
-</html>
+        <% } %>
+    </div>
+
+    <div class="card card-dark">
+        <h1>ALUNOS ATIVOS</h1>
+        <p class="big-number"><%=dash.getQtdAlunos()%></p>
+    </div>
+
+    <div class="card card-light">
+        <h1>MÉDIA DAS CASAS</h1>
+        <% for (Map.Entry<String, Double> entrada : dash.getMediaCasas().entrySet()){ %>
+            <div class="casa-item">
+                <span><%=entrada.getKey()%></span>
+                <strong><%=df.format(entrada.getValue())%></strong>
+            </div>
+        <% } %>
+    </div>
+
+    <div style="grid-column: 1 / -1;">
+        <h1>QUADRO DE OBSERVAÇÕES</h1>
+        <% for (QuadroObservacoes entrada : dash.getQuadroObservacoes()){ %>
+            <div class="obs-container">
+                <div class="obs-item">
+                    <em>"<%=entrada.getObservacao()%>"</em>
+                    <div class="obs-info">
+                        <h3><%=entrada.getAluno()%> (<%=entrada.getCasa()%>)</h3>
+                        <strong>Prof. <%=entrada.getProfessor()%></strong>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</main>
