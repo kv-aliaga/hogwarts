@@ -1,6 +1,4 @@
-<%@ page import="java.util.HashMap" %>
 <%@ page import="com.hogwarts.model.QuadroObservacoes" %>
-<%@ page import="java.util.List" %>
 <%@ page import="com.hogwarts.model.Dashboard" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.text.DecimalFormat" %><%--
@@ -18,16 +16,24 @@
     DecimalFormat df = new DecimalFormat("0.00");
 %>
 
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/dashboard.css">
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/icons/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
 <main>
     <div class="card">
         <h1>RANKING</h1>
         <% int i = 0;
-        for (Map.Entry<String, Double> entrada : dash.getRanking().entrySet()){
-            i++; %>
-            <div class="ranking-item">
-                <span><strong><%=i%>º</strong> <%=entrada.getKey()%></span>
-                <strong><%=entrada.getValue()%></strong>
-            </div>
+            for (Map.Entry<String, Double> entrada : dash.getRanking().entrySet()){
+                i++; %>
+        <div class="ranking-item">
+            <span><strong><%=i%>º</strong> <%=entrada.getKey()%></span>
+            <strong><%=entrada.getValue()%></strong>
+        </div>
         <% } %>
     </div>
 
@@ -39,25 +45,27 @@
     <div class="card card-light">
         <h1>MÉDIA DAS CASAS</h1>
         <% for (Map.Entry<String, Double> entrada : dash.getMediaCasas().entrySet()){ %>
-            <div class="casa-item">
-                <span><%=entrada.getKey()%></span>
-                <strong><%=df.format(entrada.getValue())%></strong>
-            </div>
+        <div class="casa-item">
+            <span><%=entrada.getKey()%></span>
+            <strong><%=df.format(entrada.getValue())%></strong>
+        </div>
         <% } %>
     </div>
 
     <div style="grid-column: 1 / -1;">
         <h1>QUADRO DE OBSERVAÇÕES</h1>
         <% for (QuadroObservacoes entrada : dash.getQuadroObservacoes()){ %>
-            <div class="obs-container">
-                <div class="obs-item">
-                    <em>"<%=entrada.getObservacao()%>"</em>
-                    <div class="obs-info">
-                        <h3><%=entrada.getAluno()%> (<%=entrada.getCasa()%>)</h3>
-                        <strong>Prof. <%=entrada.getProfessor()%></strong>
-                    </div>
+        <div class="obs-container">
+            <div class="obs-item">
+                <em>"<%=entrada.getObservacao()%>"</em>
+                <div class="obs-info">
+                    <h3><%=entrada.getAluno()%> (<%=entrada.getCasa()%>)</h3>
+                    <strong>Prof. <%=entrada.getProfessor()%></strong>
                 </div>
             </div>
+        </div>
         <% } %>
     </div>
 </main>
+</body>
+</html>

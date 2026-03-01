@@ -20,11 +20,11 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Área Inicial - Professor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/modal.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/inicial-prof.css">
 </head>
@@ -65,6 +65,9 @@
     </div>
     <p>O que você quer fazer hoje?</p>
 
+    <form action="dashboard-servlet" method="get">
+        <input type="submit" value="Clique aqui para ver dashboards" >
+    </form>
 
     <form method="get" action="boletim-servlet">
         <button type="submit" name="tipo" value="todos">Boletim de todos os alunos</button>

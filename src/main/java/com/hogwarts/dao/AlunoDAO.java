@@ -9,7 +9,6 @@ import java.security.NoSuchAlgorithmException;
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -57,19 +56,17 @@ public class AlunoDAO {
     }
 
 //    Método de atualizar alunos
-    public boolean atualizarAluno(Aluno aluno) throws SQLException, ClassNotFoundException{
+    public void atualizarAluno(Aluno aluno) throws SQLException, ClassNotFoundException{
         String sql = "UPDATE ALUNO SET EMAIL = ? WHERE MATRICULA = ?";
         try (Connection conn = Conexao.conectar();
              PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setString(1, aluno.getEmail());
             pstmt.setInt(2, aluno.getMatricula());
-
-            return pstmt.executeUpdate() > 0;
         }
     }
 
 //    Método de excluir alunos
-    public boolean excluirAluno(int matricula) throws SQLException, ClassNotFoundException{
+    public void excluirAluno(int matricula) throws SQLException, ClassNotFoundException{
         String sql = """
                       DELETE FROM nota WHERE cod_aluno = ?;
                       DELETE FROM observacao WHERE cod_aluno = ?;
@@ -80,8 +77,6 @@ public class AlunoDAO {
             pstmt.setInt(1, matricula);
             pstmt.setInt(2, matricula);
             pstmt.setInt(3, matricula);
-
-            return pstmt.executeUpdate() > 0;
         }
     }
 
@@ -356,68 +351,56 @@ public class AlunoDAO {
 
     // Método de login
     public boolean login(String email, String senha) throws ClassNotFoundException, SQLException, NoSuchAlgorithmException {
-        Conexao conexao = new Conexao();
-        Connection conn = conexao.conectar();
-        boolean retorno = false;
-        try {
-            PreparedStatement pstmt = conn.prepareStatement("SELECT 1 FROM ALUNO WHERE EMAIL = ? AND SENHA = ?");
+        String sql = "SELECT 1 FROM ALUNO WHERE EMAIL = ? AND SENHA = ?";
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, email);
             pstmt.setString(2, Hash.hashSenha(senha));
-            ResultSet rs = pstmt.executeQuery();
 
-            if(rs.next()){
-                retorno = true; // é aluno
-                // false = não é aluno
+            try (ResultSet rs = pstmt.executeQuery()){
+                if(rs.next()){
+                    return true; // é aluno
+                    // false = não é aluno
+                }
             }
         }
-        finally {
-            conexao.desconectar(conn);
-        }
-        return retorno;
+        return false;
     }
 
     // Validar cpf
-    public static boolean validarCpf(String cpf){
+    public static boolean validarCpf(String cpf) throws IOException{
         String caminho = "src/main/java/com/hogwarts/dao/cpfs.txt";
         File arquivo = new File(caminho);
 
         List<String> texto = new ArrayList<>();
         int contador = 0;
 
-        try{
-            Scanner inFile = new Scanner(arquivo);
 
-            while(inFile.hasNextLine()){
-                String linha = inFile.nextLine();
-                texto.add(linha);
-            }
+        Scanner inFile = new Scanner(arquivo);
 
-            inFile.close();
-            BufferedWriter bw = new BufferedWriter(new FileWriter(arquivo));
-
-            if(texto.contains(cpf)){
-                texto.remove(cpf);
-                while(contador < texto.size()){
-                    bw.write(texto.get(contador));
-                    bw.newLine();
-                    contador ++;
-                }
-                return true;
-            }
-
-            bw.close();
-
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
+        while(inFile.hasNextLine()){
+            String linha = inFile.nextLine();
+            texto.add(linha);
         }
+
+        inFile.close();
+        BufferedWriter bw = new BufferedWriter(new FileWriter(arquivo));
+
+        if(texto.contains(cpf)){
+            texto.remove(cpf);
+            while(contador < texto.size()){
+                bw.write(texto.get(contador));
+                bw.newLine();
+                contador ++;
+            }
+            return true;
+        }
+            bw.close();
         return false;
     }
 
     // Método cadastrar alunos (admin)
-
-    public boolean cadastrar(Aluno aluno) throws SQLException, ClassNotFoundException {
+    public boolean cadastrar(Aluno aluno) throws SQLException, ClassNotFoundException, IOException {
         Conexao conexao = new Conexao();
         Connection conn = conexao.conectar();
         int retorno = 0;

@@ -5,7 +5,7 @@
     Aluno aluno = (Aluno) session.getAttribute("aluno");
 
     if (aluno == null) {
-        response.sendRedirect("index.html");
+        response.sendRedirect("antigocadastro.html");
         return;
     }
 
@@ -36,14 +36,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Portal do Aluno - <%= aluno.getCasaHogwarts().getNome() %>
-    </title>
+    <title>Portal do Aluno - <%= aluno.getCasaHogwarts().getNome() %></title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/2?family=Harry+P&display=swap"
           rel="stylesheet">
-
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/icons/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" type="text/css" href="assets/css/<%= nomeDoCss %>">
 

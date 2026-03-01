@@ -2,7 +2,6 @@ package com.hogwarts.dao.admin;
 
 import com.hogwarts.utils.Conexao;
 import com.hogwarts.utils.Hash;
-import org.jetbrains.annotations.Nullable;
 
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
@@ -23,7 +22,7 @@ public class AdminDAO {
         String sql = "SELECT NOME FROM disciplina WHERE cod_professor = (SELECT ID FROM professor WHERE usuario = ? AND NOME = ?)";
 
         try (Connection conn = Conexao.conectar();
-             PreparedStatement pstmt = conn.prepareStatement(sql);
+             PreparedStatement pstmt = conn.prepareStatement(sql)
         ){
             pstmt.setString(1, usuario);
             pstmt.setString(2, nome);
@@ -36,7 +35,7 @@ public class AdminDAO {
 
     private String getLogin(String identificador, String senha, String sql) throws SQLException, NoSuchAlgorithmException, ClassNotFoundException {
         try (Connection conn = Conexao.conectar();
-             PreparedStatement pstmt = conn.prepareStatement(sql);
+             PreparedStatement pstmt = conn.prepareStatement(sql)
         ){
             pstmt.setString(1, identificador);
             ResultSet rs = pstmt.executeQuery();

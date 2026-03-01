@@ -1,6 +1,6 @@
 /* Configurações Gerais */
 body {
-    background-image: url("img/fundoTela.png");
+    background-image: url("../images/fundoTela.png");
     background-size: cover;
     background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

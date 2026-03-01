@@ -20,9 +20,10 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Casas</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/modal.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/casas.css">
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/icons/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <main>

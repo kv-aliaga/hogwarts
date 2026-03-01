@@ -39,25 +39,21 @@ public class CasaDAO {
     }
 
 //    Método de atualizar professor gestor da casa de hogwarts
-    public boolean atualizarCasa(int idSubstituto, int idCasa) throws SQLException, ClassNotFoundException{
+    public void atualizarCasa(int idSubstituto, int idCasa) throws SQLException, ClassNotFoundException{
         String sql = "UPDATE CASA_HOGWARTS SET COD_PROFESSOR = ? WHERE ID = ?";
         try (Connection conn = Conexao.conectar();
              PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setInt(1, idSubstituto);
             pstmt.setInt(2, idCasa);
-
-            return pstmt.executeUpdate() > 0;
         }
     }
 
-    public boolean atualizarPontos(int pontuacao, int idCasa) throws SQLException, ClassNotFoundException{
+    public void atualizarPontos(int pontuacao, int idCasa) throws SQLException, ClassNotFoundException{
         String sql = "UPDATE CASA_HOGWARTS SET PONTUACAO = ? WHERE ID = ?";
         try (Connection conn = Conexao.conectar();
         PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setInt(1, pontuacao);
             pstmt.setInt(2, idCasa);
-
-            return pstmt.executeUpdate() > 0;
         }
     }
 }

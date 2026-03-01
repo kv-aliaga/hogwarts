@@ -18,9 +18,10 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Alunos</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/modal.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/aluno.css">
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/icons/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <main>

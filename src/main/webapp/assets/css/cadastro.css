@@ -10,10 +10,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Background com a imagem de fundo 👽📷*/
     background-image:
         linear-gradient(rgba(10, 10, 30, 0.85), rgba(10, 10, 30, 0.85)),
-        url("img/fundoPrincipal.jpg");
+        url("../images/fundoPrincipal.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,7 +38,7 @@ body {
     /* Background com a imagem de fundo 👽📷*/
     background-image:
         linear-gradient(rgba(10, 10, 30, 0.3), rgba(10, 10, 30, 0.5)),
-        url("img/estudantes.jpg");
+        url("../images/estudantes.jpg");
     background-size: 345%;
     background-position: center;
     background-repeat: no-repeat;
@@ -105,7 +104,9 @@ input {
     opacity: 0.9;
 }
 
-#botao-secundario {
+#botao-secundario{
+    display: inline-block;
+    text-align: center;
     margin-top: 12px;
     padding: 12px;
     border-radius: 12px;
@@ -114,9 +115,20 @@ input {
     color: #f5d28c;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
 }
 
-#botao-secundario:hover {
+#botao-secundario:hover{
     background-color: #f5d28c;
     color: #111;
+}
+
+#container-principal {
+    max-height: 95vh;
+    overflow: hidden;
+}
+
+.lado-direito{
+    overflow-y: auto;
+    max-height: 95vh;
 }

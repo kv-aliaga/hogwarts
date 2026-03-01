@@ -16,13 +16,11 @@
 <head>
     <title>Painel do Administrador</title>
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/inicial-adm.css">
-
-
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/icons/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <main>
@@ -30,6 +28,10 @@
     <p>O que você quer fazer hoje?</p>
 
     <form action="admin-servlet" id="f" method="get"></form>
+
+    <form action="dashboard-servlet" method="get">
+        <input type="submit" value="Clique aqui para ver dashboards" >
+    </form>
 
     <section>
         <h3>Casas de Hogwarts</h3>
