@@ -20,8 +20,8 @@ public class AdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         AdminDAO d = new AdminDAO();
         try {
-            String email = req.getParameter("email");
-            String senha = req.getParameter("senha");
+            String email = req.getParameter("email-admin");
+            String senha = req.getParameter("senha-admin");
             String nome = d.ehAdmin(email, senha);
 
             if (nome != null){

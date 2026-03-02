@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Cadastro Hogwarts</title>
     <link rel="stylesheet" href="assets/css/cadastro/cadastro.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
     <script src="assets/js/cadastro.js"></script>
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
+
+    <form action="admin-servlet" id="f" method="post"></form>
 
     <div id="container-principal">
         <!-- Lado esquerdo -->
@@ -51,8 +55,24 @@
 
                 <a href="pages/recuperarSenha.html" class="botao-secundario">Recuperar Senha</a>
                 <a href="pages/antigocadastro.html" class="botao-secundario">Antiga página de cadastro</a>
-
             </form>
+
+            <div>
+                <button type="button" class="abre-modal" data-modal="modal-1">Área Restrita</button>
+
+                <dialog id="modal-1">
+                    <button type="button" class="fecha-modal" data-modal="modal-1">x</button>
+                    <form action="admin-servlet" method="post">
+                        <label for="email-admin">Digite seu email:</label>
+                        <input type="email" name="email-admin" id="email-admin">
+
+                        <label for="senha-admin">Digite sua senha:</label>
+                        <input type="password" name="senha-admin" id="senha-admin">
+
+                        <button type="submit" name="acao" value="inserir">Enviar dados</button>
+                    </form>
+                </dialog>
+            </div>
         </div>
 
     </div>
