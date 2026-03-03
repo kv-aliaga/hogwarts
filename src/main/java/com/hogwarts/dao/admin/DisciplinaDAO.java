@@ -135,6 +135,9 @@ public class DisciplinaDAO {
 //    Método de excluir professores
     public void excluirProfessor(int idProfessor) throws SQLException, ClassNotFoundException{
         String sql = """
+                      DELETE FROM observacao
+                      WHERE cod_disciplina = (SELECT id FROM disciplina WHERE cod_professor = ?);
+                      
                       UPDATE disciplina
                       SET cod_professor = NULL
                       WHERE cod_professor = ?;
@@ -142,10 +145,7 @@ public class DisciplinaDAO {
                       UPDATE casa_hogwarts
                       SET cod_professor = NULL
                       WHERE cod_professor = ?;
-                      
-                      DELETE FROM observacao
-                      WHERE cod_disciplina = (SELECT id FROM disciplina WHERE cod_professor = ?);
-                      
+                     
                       DELETE FROM professor
                       WHERE id = ?
                       """;

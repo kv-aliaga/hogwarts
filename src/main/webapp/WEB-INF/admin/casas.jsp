@@ -96,7 +96,7 @@
                 </dialog>
             </td>
             <td class="modal">
-                <button type="button" class="abre-modal" data-modal="modal-ponto-<%=id%>">Editar Pontuação</button>
+                <button type="button" class="abre-modal" data-modal="modal-ponto-<%=id%>">Editar Pontos</button>
 
                 <dialog id="modal-ponto-<%=id%>">
                     <button class="fecha-modal" data-modal="modal-ponto-<%=id%>">x</button>

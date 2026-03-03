@@ -62,6 +62,8 @@ public class AlunoDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setString(1, aluno.getEmail());
             pstmt.setInt(2, aluno.getMatricula());
+
+            pstmt.executeUpdate();
         }
     }
 
@@ -77,6 +79,8 @@ public class AlunoDAO {
             pstmt.setInt(1, matricula);
             pstmt.setInt(2, matricula);
             pstmt.setInt(3, matricula);
+
+            pstmt.executeUpdate();
         }
     }
 
@@ -410,7 +414,7 @@ public class AlunoDAO {
                 pstmt.setString(1, aluno.getNome());
                 pstmt.setString(2, aluno.getCpf());
                 pstmt.setString(3, aluno.getEmail());
-                pstmt.setString(4, aluno.getSenha());
+                pstmt.setString(4, Hash.hashSenha(aluno.getSenha()));
                 pstmt.setInt(5, aluno.getCasaHogwarts().getId());
                 retorno = pstmt.executeUpdate();
                 if (retorno > 0) {
@@ -421,7 +425,7 @@ public class AlunoDAO {
                     }
                 }
 
-            } catch (SQLException e) {
+            } catch (SQLException | NoSuchAlgorithmException e) {
                 e.printStackTrace();
             } finally {
                 conexao.desconectar(conn);

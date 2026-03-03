@@ -45,6 +45,8 @@ public class CasaDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setInt(1, idSubstituto);
             pstmt.setInt(2, idCasa);
+
+            pstmt.executeUpdate();
         }
     }
 
@@ -54,6 +56,8 @@ public class CasaDAO {
         PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setInt(1, pontuacao);
             pstmt.setInt(2, idCasa);
+
+            pstmt.executeUpdate();
         }
     }
 }

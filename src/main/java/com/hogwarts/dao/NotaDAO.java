@@ -36,6 +36,8 @@ public class NotaDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setInt(1, n.getAluno().getMatricula());
             pstmt.setInt(2, n.getDisciplina().getId());
+
+            pstmt.executeUpdate();
         }
     }
 
@@ -45,6 +47,8 @@ public class NotaDAO {
             pstmt.setDouble(1, notaValor);
             pstmt.setInt(2, infoNota.getAluno().getMatricula());
             pstmt.setInt(3, infoNota.getDisciplina().getId());
+
+            pstmt.executeUpdate();
         }
     }
 }
