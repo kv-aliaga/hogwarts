@@ -38,8 +38,7 @@ public class LoginServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(
                     "jdbc:postgresql://localhost:5432/seuBanco",
                     "usuarioBanco",
-                    "senhaBanco"
-            );
+                    "senhaBanco");
 
             String sql = "SELECT login, senha, tipo FROM usuarios WHERE login = ? AND senha = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -52,8 +51,7 @@ public class LoginServlet extends HttpServlet {
                 usuario = new Usuario(
                         rs.getString("login"),
                         rs.getString("senha"),
-                        rs.getString("tipo")
-                );
+                        rs.getString("tipo"));
             }
 
             conn.close();
@@ -72,15 +70,14 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("usuarioLogado", usuario);
 
-        // Redireciona conforme regex e tipo
+        String contexto = request.getContextPath();
+
         if (alunoMatcher.matches() && usuario.getTipo().equalsIgnoreCase("ALUNO")) {
-            response.sendRedirect("../aluno/inicial.jsp");
-
+            response.sendRedirect(contexto + "/aluno/inicial.jsp");
         } else if (professorMatcher.matches() && usuario.getTipo().equalsIgnoreCase("PROFESSOR")) {
-            response.sendRedirect("../prof/inicial.jsp");
-
+            response.sendRedirect(contexto + "/prof/inicial.jsp");
         } else {
-            response.sendRedirect("cadastroantigo.html?erro=formato");
+            response.sendRedirect(contexto + "/cadastroantigo.html?erro=formato");
         }
     }
 }
