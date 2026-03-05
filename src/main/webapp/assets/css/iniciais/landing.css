@@ -1,0 +1,315 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #14131f;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container-pagina {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+
+.fonte-harry {
+  font-family: 'Harry P', cursive;
+  background: linear-gradient(180deg, #645405, #937b07);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  display: block;
+}
+
+
+.cabecalho {
+  width: 100%;
+  padding: 0 8%;
+  position: relative;
+}
+
+.barra-superior {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.botao-portal {
+  border: 2px solid #fff;
+  border-radius: 40px;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.botao-portal:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.portal-aluno {
+  order: 1;
+}
+
+.portal-cadastro {
+  background: linear-gradient(180deg, #4d4107, #937b07);
+  border-color: #937b07;
+  order: 3;
+}
+
+.portal-cadastro:hover {
+  background: linear-gradient(180deg, #5e4c09, #b19308);
+}
+
+.brasao-hogwarts {
+  width: 100px;
+  height: 100px;
+  background: url('../../images/landing-page/v223_331.png') no-repeat center / contain;
+  order: 2;
+  margin: 0 20px;
+}
+
+
+.secao-destaque {
+  display: flex;
+  align-items: center;
+  padding: 80px 0 120px;
+  position: relative;
+}
+
+.conteudo-destaque {
+  flex: 1;
+  max-width: 60%;
+  z-index: 1;
+}
+
+.titulo-prefixo {
+  font-size: 48px;
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.titulo-principal {
+  font-family: 'Harry P', cursive;
+  font-size: 90px;
+  background: linear-gradient(180deg, #645405, #937b07);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitulo {
+  font-size: 36px;
+  font-weight: 600;
+  display: block;
+  max-width: 700px;
+}
+
+.descricao-destaque {
+  max-width: 650px;
+  margin-top: 25px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.video-destaque {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.secao-casas {
+  padding: 100px 8%;
+  text-align: center;
+  background: linear-gradient(180deg, #141122 0%, #201e2d 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.secao-casas::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../../images/landing-page/onda.png") no-repeat center top;
+  background-size: 100% 100%;
+  transform: scaleY(-1);
+  z-index: 0;
+}
+
+.titulo-secao {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.descricao-secao {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  color: #ccc;
+  font-size: 16px;
+}
+
+.grade-casas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.card-casa {
+  width: 260px;
+  background: #1b1730;
+  border-radius: 25px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.brasao-casa {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 4px solid #937b07;
+  background-color: #1b1730;
+}
+
+.brasao-grifinoria { background-image: url('../../images/landing-page/v223_364.png'); }
+.brasao-sonserina { background-image: url('../../images/landing-page/v223_372.png'); }
+.brasao-lufa { background-image: url('../../images/landing-page/v223_381.png'); }
+.brasao-corvinal { background-image: url('../../images/landing-page/v223_389.png'); }
+
+.nome-casa {
+  font-weight: 700;
+  color: #937b07;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.divisor-casa {
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #937b07, transparent);
+  margin-bottom: 20px;
+}
+
+.descricao-casa {
+  font-size: 14px;
+  color: #c0b7e7;
+  line-height: 1.5;
+}
+
+
+.secao-diretoria {
+  padding: 100px 8% 150px;
+  text-align: center;
+  background: linear-gradient(180deg, #201e2d 0%, #141122 100%);
+}
+
+.grade-diretoria {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.card-diretor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+}
+
+.foto-diretor {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #937b07;
+  transition: 0.3s ease;
+}
+
+.foto-diretor:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(147, 123, 7, 0.22);
+}
+
+.foto-dumbledore { 
+  background-image: url('../../images/landing-page/v223_401.png');
+}
+.foto-mcgonagall { 
+  background-image: url('../../images/landing-page/v223_404.png');
+}
+.foto-snape { 
+  background-image: url('../../images/landing-page/v223_407.png');
+}
+.foto-umbridge { 
+  background-image: url('../../images/landing-page/v223_410.png');
+}
+
+.nome-diretor {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+
+.rodape {
+  background: #141122;
+  padding: 40px 8%;
+  text-align: center;
+  position: relative;
+}
+
+.onda-rodape {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../../images/landing-page/onda.png") no-repeat center top;
+  background-size: 100% 100%;
+  opacity: 0.1;
+}
+
+.copyright {
+  color: #937b07;
+  font-weight: 600;
+  font-size: 14px;
+}

@@ -5,7 +5,7 @@
     Aluno aluno = (Aluno) session.getAttribute("aluno");
 
     if (aluno == null) {
-        response.sendRedirect("../webapp/index.html");
+        response.sendRedirect("login.html");
         return;
     }
 

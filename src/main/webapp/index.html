@@ -1,66 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <title>Cadastro Hogwarts</title>
-    <link rel="stylesheet" href="assets/css/cadastro/cadastro.css">
-    <link rel="stylesheet" href="assets/css/modal.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
-
-    <script src="assets/js/script.js" defer></script>
-</head>
+<!--    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Harry+P&display=swap" rel="stylesheet" />
+    <link href="assets/css/iniciais/landing.css" rel="stylesheet" />
+    <title>Hogwarts - Escola de Magia e Bruxaria</title> </head>
 <body>
+<div class="container-pagina">
 
-    <form action="admin-servlet" id="f" method="post"></form>
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
 
-    <div id="container-principal">
-        <!-- Lado esquerdo -->
-        <div class="lado-esquerdo">
-            <h1>
-                Acompanhe sua<br>   
-                trajetória em <span>Hogwarts!</span>
-            </h1>
+        <div class="barra-superior">
+            <a href="login.html" class="botao-portal portal-aluno">
+                ALUNO OU PROFESSOR? FAÇA LOGIN!
+            </a>
+
+            <div class="brasao-hogwarts"></div>
+
+            <a href="#" class="botao-portal portal-cadastro">
+                DUVIDAS? NOS ENVIE UMA CARTA!
+            </a>
         </div>
 
-        <!-- Lado direito -->
-        <div class="lado-direito">
-            <h2>Área de Login:</h2>
+        <div class="secao-destaque">
 
-            <form action="login-servlet" method="post">
-                <label for="email-usuario">Digite seu email ou usuário:</label>
-                <input type="text" name="email-usuario" id="email-usuario" maxlength="50">
+            <div class="conteudo-destaque">
+                <span class="titulo-prefixo">Conheça</span>
+                <span class="titulo-principal">Hogwarts,</span>
+                <span class="subtitulo">
+                    a melhor escola de Magia e Bruxaria do mundo!
+                </span>
 
-                <label for="senha">Digite sua senha:</label>
-                <input type="password" name="senha" id="senha">
-
-                <button type="submit" id="botao-principal">
-                    Concluir Login
-                </button>
-
-                <a href="pages/recuperarSenha.html" class="botao-secundario">Recuperar Senha</a>
-            </form>
-
-            <div>
-                <button type="button" class="abre-modal botao-secundario" data-modal="modal-1">Área Restrita</button>
-
-                <dialog id="modal-1">
-                    <button type="button" class="fecha-modal" data-modal="modal-1">x</button>
-                    <form action="admin-servlet" method="post">
-                        <label for="email-admin">Digite seu email:</label>
-                        <input type="email" name="email-admin" id="email-admin">
-
-                        <label for="senha-admin">Digite sua senha:</label>
-                        <input type="password" name="senha-admin" id="senha-admin">
-
-                        <button type="submit" name="acao" value="inserir">Enviar dados</button>
-                    </form>
-                </dialog>
+                <p class="descricao-destaque">
+                    No coração das Terras Altas da Escócia, ergue-se o lendário castelo
+                    de Hogwarts, uma instituição milenar dedicada à formação de jovens
+                    bruxos e bruxas. Seus salões ecoam histórias de coragem,
+                    amizade e mistério, enquanto suas torres guardam segredos
+                    que atravessam gerações.
+                </p>
             </div>
+
+            <video class="video-destaque" autoplay muted loop playsinline>
+                <source src="assets/video/hogwarts.mp4" type="video/mp4">
+            </video>
+
+        </div>
+    </header>
+
+
+    <section class="secao-casas">
+
+        <h2 class="titulo-secao fonte-harry">As casas de Hogwarts</h2>
+
+        <p class="descricao-secao">
+            D Desde a fundação desta venerável instituição, os estudantes são
+            distribuídos entre quatro casas distintas, cada qual representando
+            virtudes nobres e tradições seculares.
+        </p>
+
+        <div class="grade-casas">
+
+            <div class="card-casa">
+                <div class="brasao-casa brasao-grifinoria"></div>
+                <span class="nome-casa">GRIFINÓRIA</span>
+                <div class="divisor-casa"></div>
+                <p class="descricao-casa">
+                    Destaca-se pela coragem, ousadia e determinação.
+                    Seus membros são conhecidos por sua bravura inabalável.
+                </p>
+            </div>
+
+            <div class="card-casa">
+                <div class="brasao-casa brasao-sonserina"></div>
+                <span class="nome-casa">SONSERINA</span>
+                <div class="divisor-casa"></div>
+                <p class="descricao-casa">
+                    Valoriza ambição, astúcia e liderança.
+                    Seus integrantes trilham caminhos marcados pela estratégia.
+                </p>
+            </div>
+
+            <div class="card-casa">
+                <div class="brasao-casa brasao-lufa"></div>
+                <span class="nome-casa">LUFA-LUFA</span>
+                <div class="divisor-casa"></div>
+                <p class="descricao-casa">
+                    Celebra a lealdade, paciência e justiça.
+                    É reconhecida por seu espírito acolhedor.
+                </p>
+            </div>
+
+            <div class="card-casa">
+                <div class="brasao-casa brasao-corvinal"></div>
+                <span class="nome-casa">CORVINAL</span>
+                <div class="divisor-casa"></div>
+                <p class="descricao-casa">
+                    Preza pela inteligência, criatividade e sabedoria.
+                    Seus membros buscam constantemente o conhecimento.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="secao-diretoria">
+
+        <h2 class="titulo-secao fonte-harry">Nossa Diretoria</h2>
+
+        <p class="descricao-secao">
+            Ao longo dos anos, Hogwarts foi conduzida por líderes notáveis,
+            cuja sabedoria moldou o destino de incontáveis gerações.
+        </p>
+
+        <div class="grade-diretoria">
+
+            <div class="card-diretor">
+                <div class="foto-diretor foto-dumbledore"></div>
+                <span class="nome-diretor">Alvo Dumbledore</span>
+            </div>
+
+            <div class="card-diretor">
+                <div class="foto-diretor foto-mcgonagall"></div>
+                <span class="nome-diretor">Minerva McGonagall</span>
+            </div>
+
+            <div class="card-diretor">
+                <div class="foto-diretor foto-snape"></div>
+                <span class="nome-diretor">Severo Snape</span>
+            </div>
+
+            <div class="card-diretor">
+                <div class="foto-diretor foto-umbridge"></div>
+                <span class="nome-diretor">Dolores Umbridge</span>
+            </div>
+
         </div>
 
-    </div>
+    </section>
 
+
+    <footer class="rodape">
+        <div class="onda-rodape"></div>
+        <span class="copyright">
+            © ∞ Hogwarts. Todos os direitos reservados.
+        </span>
+    </footer>
+
+</div>
 </body>
 </html>
