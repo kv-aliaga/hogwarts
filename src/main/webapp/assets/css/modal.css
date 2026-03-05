@@ -6,7 +6,7 @@
     --marrom-claro: rgba(255, 168, 0, .35);
     --azul-link: #8f763c;
     --branco-fundo: #8f763c;
-    --cinza-fundo: rgba(31, 39, 72, 0.53);
+    --cinza-fundo: rgb(31, 39, 72);
     --botao-nao-fundo: rgba(220, 38, 38, .10);
     --botao-nao-borda: rgba(220, 38, 38, .5);
     --botao-nao-texto: #7f1d1d;
@@ -196,6 +196,9 @@ dialog form{
     margin-top: 12px;
 }
 
+dialog form label{
+    color: #8f763c;
+}
 dialog label{
     display: block;
     margin: 10px 0 5px;
@@ -213,10 +216,11 @@ dialog select{
     width: 100%;
     padding: 10px 15px;
     border-radius: 10px;
-    border: 1px solid var(--sombra);
+    border: #8f763c;
     background: var(--cinza-fundo);
     color: var(--branco-fundo);
     outline: none;
+
 }
 
 dialog input:focus,
@@ -245,6 +249,7 @@ dialog form button{
     padding: 8px 12px;
     font-weight: 600;
     margin-top: 15px;
+
 }
 
 dialog form button[type="submit"]{
