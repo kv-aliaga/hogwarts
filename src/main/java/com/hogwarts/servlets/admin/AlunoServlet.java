@@ -37,10 +37,6 @@ public class AlunoServlet extends HttpServlet {
                     resp.sendRedirect(req.getContextPath() + "/admin-servlet?tipo=alunos");
                     break;
 
-                case "login":
-                    if (loginAluno(req, resp)) req.getRequestDispatcher("WEB-INF/aluno/inicial.jsp").forward(req, resp);
-                    break;
-
                 case "boletim":
                     boletim(req);
                     req.getRequestDispatcher("WEB-INF/aluno/boletim.jsp").forward(req, resp);
@@ -111,23 +107,6 @@ public class AlunoServlet extends HttpServlet {
 
     private void excluirAluno(HttpServletRequest req) throws SQLException, ClassNotFoundException{
         new AlunoDAO().excluirAluno(Integer.parseInt(req.getParameter("matricula")));
-    }
-
-    private boolean loginAluno(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException, ServletException, IOException {
-        AlunoDAO dao = new AlunoDAO();
-        String email = req.getParameter("email");
-        String senha = req.getParameter("senha");
-
-        if (dao.login(email, senha)) {
-            HttpSession session = req.getSession();
-            session.setAttribute("aluno", dao.buscarAluno(email, senha));
-            return true;
-        }
-        else {
-            req.setAttribute("mensagemErro", "Houve um problema com o seu cadastro. Esta página é somente para os alunos.");
-            req.getRequestDispatcher("WEB-INF/pagina-erro.jsp").forward(req, resp);
-            return false;
-        }
     }
 
     private void boletim(HttpServletRequest req) throws SQLException, ClassNotFoundException {
