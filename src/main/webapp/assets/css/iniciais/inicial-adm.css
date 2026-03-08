@@ -103,3 +103,26 @@ section button:hover {
 section button:active {
     transform: translateY(0);
 }
+
+.acao-painel {
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--cor-destaque);
+    color: rgba(0, 0, 0, 0.53);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: normal;
+    line-height: normal;
+    margin: 10px auto;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.acao-painel:hover {
+    background-color: #d4b057;
+    transform: translateY(-2px);
+    box-shadow: none;
+    filter: none;
+}

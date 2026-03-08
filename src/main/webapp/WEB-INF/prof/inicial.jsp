@@ -36,7 +36,7 @@
     <h2>Professor de <%=Formatador.mostrar(disciplina)%></h2>
     <p>É professor de outra disciplina?</p>
     <div class="modal">
-        <button type="button" name="tipo" class="abre-modal astext" data-modal="modal-1">
+        <button type="button" name="tipo" class="abre-modal acao-painel" data-modal="modal-1">
             Clique aqui para ver suas disciplinas
         </button>
 
@@ -66,24 +66,24 @@
     <p>O que você quer fazer hoje?</p>
 
     <form action="dashboard-servlet" method="get">
-        <input type="submit" value="Clique aqui para ver dashboards" >
+        <button type="submit" class="acao-painel">Dashboards</button>
     </form>
 
     <form method="get" action="boletim-servlet">
-        <button type="submit" name="tipo" value="todos">Boletim de todos os alunos</button>
-        <button type="submit" name="tipo" value="observacao">Cadastrar observação</button>
+        <button type="submit" class="acao-painel" name="tipo" value="todos">Boletim de todos os alunos</button>
+        <button type="submit" class="acao-painel" name="tipo" value="observacao">Cadastrar observação</button>
 
         <input type="hidden" name="disciplina" value="<%=disciplina%>">
     </form>
 
     <div class="modal">
-        <button type="button" name="tipo" class="abre-modal" data-modal="modal-2">
+        <button type="button" name="tipo" class="abre-modal acao-painel" data-modal="modal-2">
             Boletim individual
         </button>
 
         <dialog id="modal-2">
             <button type="button" class="fecha-modal" data-modal="modal-2">
-                <img src="<%=request.getContextPath()%>/assets/icons/fecha.webp" alt="Sair">
+                x
             </button>
 
             <form action="boletim-servlet" method="get">

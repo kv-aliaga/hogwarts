@@ -1,8 +1,10 @@
+@import url("../fontes.css");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -43,8 +45,8 @@ body {
     line-height: 1.5;
 }
 
-.lado-esquerdo span {
-    font-family: 'Cinzel', serif;
+.lado-esquerdo h1 span {
+    font-family: 'Harry P', 'Magic School' ,serif;
     font-size: 30px;
     letter-spacing: 2px;
 }

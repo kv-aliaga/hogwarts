@@ -54,28 +54,6 @@ p {
     margin-bottom: 15px;
 }
 
-form button[type="submit"] {
-    font-family: 'Arial';
-    background-color: var(--cor-destaque);
-    color: rgba(0, 0, 0, 0.53);
-    border: none;
-    padding: 12px 25px;
-    border-radius: 15px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 10px 5px;
-}
-
-form button[type="submit"]:hover {
-    background-color: #d4b057;
-    transform: translateY(-2px);
-}
-
-form button[type="submit"]:active {
-    transform: translateY(0);
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -102,4 +80,54 @@ tr:nth-child(even) {
 
 tr:hover {
     background-color: rgba(31, 39, 72, 0.53);
+}
+
+.acao-painel {
+    display: inline-block;
+    width: 100%;
+    max-width: 420px;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-destaque);
+    color: rgba(0, 0, 0, 0.53);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.acao-painel:hover {
+    background-color: #d4b057;
+    transform: translateY(-2px);
+}
+
+.acao-painel:active, .abre-modal.acao-painel:active {
+    transform: translateY(0);
+}
+
+.abre-modal.acao-painel {
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--cor-destaque);
+    color: rgba(0, 0, 0, 0.53);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: normal;
+    line-height: normal;
+    margin: 10px auto;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.abre-modal.acao-painel:hover {
+    background-color: #d4b057;
+    transform: translateY(-2px);
+    box-shadow: none;
+    filter: none;
 }

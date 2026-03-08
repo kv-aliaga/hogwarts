@@ -103,16 +103,6 @@ td.modal{
     box-shadow: 0 2px 4px var(--sombra);
 }
 
-.abre-modal.astext{
-    border: 0;
-    background: transparent;
-    padding: 0;
-    border-radius: 0;
-    font-weight: 600;
-    text-decoration: underline;
-    color: var(--azul-link);
-}
-
 dialog::backdrop{
     background: var(--sombra-escura);
 }
@@ -283,4 +273,40 @@ dialog .ajuste{
     background: var(--cinza-fundo);
     font-weight: 800;
     color: var(--branco-fundo);
+}
+
+.abre-modal {
+    cursor: pointer;
+    border: 1px solid var(--sombra);
+    background: var(--branco-fundo);
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.2em;
+    width: 60%;
+    display: block;
+    margin: 10px auto;
+    box-shadow: 0 4px 6px var(--sombra);
+    transition: all 0.3s ease;
+}
+
+.abre-modal.btn-secundario-login {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #f5d28c;
+    background: transparent;
+    color: #f5d28c;
+    box-shadow: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.abre-modal.btn-secundario-login:hover {
+    background-color: #f5d28c;
+    color: #111;
+    transform: none;
+    box-shadow: none;
 }

@@ -373,7 +373,7 @@ public class AlunoDAO {
 
     // Validar cpf
     public static boolean validarCpf(String cpf) throws IOException{
-        String caminho = "src/main/java/com/hogwarts/dao/cpfs.txt";
+        String caminho = "src/main/java/com/hogwarts/utils/cpfs.txt";
         File arquivo = new File(caminho);
 
         List<String> texto = new ArrayList<>();

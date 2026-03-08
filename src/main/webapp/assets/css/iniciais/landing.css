@@ -79,7 +79,7 @@ body {
 .brasao-hogwarts {
   width: 100px;
   height: 100px;
-  background: url('../../images/landing-page/v223_331.png') no-repeat center / contain;
+  background: url('../../images/landing-page/hogwarts.png') no-repeat center / contain;
   order: 2;
   margin: 0 20px;
 }
@@ -208,10 +208,10 @@ body {
   background-color: #1b1730;
 }
 
-.brasao-grifinoria { background-image: url('../../images/landing-page/v223_364.png'); }
-.brasao-sonserina { background-image: url('../../images/landing-page/v223_372.png'); }
-.brasao-lufa { background-image: url('../../images/landing-page/v223_381.png'); }
-.brasao-corvinal { background-image: url('../../images/landing-page/v223_389.png'); }
+.brasao-grifinoria { background-image: url('../../images/landing-page/grifinoria.png'); }
+.brasao-sonserina { background-image: url('../../images/landing-page/soncerina.png'); }
+.brasao-lufa { background-image: url('../../images/landing-page/lufa-lufa.png'); }
+.brasao-corvinal { background-image: url('../../images/landing-page/corvinal.png'); }
 
 .nome-casa {
   font-weight: 700;
@@ -271,16 +271,16 @@ body {
 }
 
 .foto-dumbledore { 
-  background-image: url('../../images/landing-page/v223_401.png');
+  background-image: url('../../images/landing-page/dumbledore.png');
 }
 .foto-mcgonagall { 
-  background-image: url('../../images/landing-page/v223_404.png');
+  background-image: url('../../images/landing-page/minerva.png');
 }
 .foto-snape { 
-  background-image: url('../../images/landing-page/v223_407.png');
+  background-image: url('../../images/landing-page/snape.png');
 }
 .foto-umbridge { 
-  background-image: url('../../images/landing-page/v223_410.png');
+  background-image: url('../../images/landing-page/umbridge.png');
 }
 
 .nome-diretor {

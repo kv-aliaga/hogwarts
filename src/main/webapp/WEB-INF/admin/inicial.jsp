@@ -31,7 +31,7 @@
     <form action="admin-servlet" id="f" method="get"></form>
 
     <form action="dashboard-servlet" method="get">
-        <input type="submit" value="Clique aqui para ver dashboards" >
+        <button type="submit" class="acao-painel">Dashboards</button>
     </form>
 
     <section>

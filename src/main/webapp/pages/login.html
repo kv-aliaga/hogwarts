@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Cadastro Hogwarts</title>
-    <link rel="stylesheet" href="assets/css/cadastro/cadastro.css">
-    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="../assets/css/cadastro/cadastro.css">
+    <link rel="stylesheet" href="../assets/css/modal.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 
-    <script src="assets/js/script.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
 </head>
 <body>
 
-    <form action="admin-servlet" id="f" method="post"></form>
+    <form action="../admin-servlet" id="f" method="post"></form>
 
     <div id="container-principal">
         <!-- Lado esquerdo -->
@@ -26,9 +26,9 @@
 
         <!-- Lado direito -->
         <div class="lado-direito">
-            <h2>Área de Login:</h2>
+            <h2>Área de Login</h2>
 
-            <form action="login-servlet" method="post">
+            <form action="../login-servlet" method="post">
                 <label for="email-usuario">Digite seu email ou usuário:</label>
                 <input type="text" name="email-usuario" id="email-usuario" maxlength="50">
 
@@ -39,15 +39,15 @@
                     Concluir Login
                 </button>
 
-                <a href="pages/recuperarSenha.html" class="botao-secundario">Recuperar Senha</a>
+                <a href="recuperarSenha.html" class="botao-secundario">Recuperar Senha</a>
             </form>
 
             <div>
-                <button type="button" class="abre-modal botao-secundario" data-modal="modal-1">Área Restrita</button>
+                <button type="button" class="abre-modal btn-secundario-login" data-modal="modal-1">Área Restrita</button>
 
                 <dialog id="modal-1">
                     <button type="button" class="fecha-modal" data-modal="modal-1">x</button>
-                    <form action="admin-servlet" method="post">
+                    <form action="../admin-servlet" method="post">
                         <label for="email-admin">Digite seu email:</label>
                         <input type="email" name="email-admin" id="email-admin">
 

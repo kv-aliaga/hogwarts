@@ -34,7 +34,6 @@
             <tr>
                 <th>Aluno</th>
                 <th>Casa</th>
-                <th>Disciplina</th>
                 <th>Observacao</th>
                 <th colspan="2">Acoes</th>
             </tr>
@@ -47,7 +46,6 @@
         <tbody>
             <tr>
                 <td><%=b.getAluno().getNome()%></td>
-                <td><%=b.getCasaHogwarts().getNome()%></td>
                 <td><%=b.getDisciplina().getNome()%></td>
                 <td>
                     <%if (b.getObservacao().getObservacao() == null){%> <%=Formatador.mostrar(b.getObservacao().getObservacao())%>

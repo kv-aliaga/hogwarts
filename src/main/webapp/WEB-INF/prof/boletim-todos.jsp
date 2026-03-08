@@ -37,8 +37,6 @@
             <tr>
                 <th>Aluno</th>
                 <th>Casa</th>
-                <th>Professor</th>
-                <th>Matéria</th>
                 <th>Nota 1</th>
                 <th>Nota 2</th>
                 <th>Média</th>
@@ -56,8 +54,6 @@
             <tr>
                 <td><%=b.getAluno().getNome()%></td>
                 <td><%=b.getCasaHogwarts().getNome()%></td>
-                <td><%=b.getProfessor().getNome()%></td>
-                <td><%=b.getDisciplina().getNome()%></td>
                 <td><%=b.getNota1() == 0 ? "--" : ("<strong>" + b.getNota1() + "</strong>") %></td>
                 <td><%=b.getNota2() == 0 ? "--" : ("<strong>" + b.getNota2() + "</strong>") %></td>
                 <td><%=b.getMedia() == 0 ? "--" : ("<strong>" + b.getMedia() + "</strong>")%></td>
