@@ -1,0 +1,6 @@
+target
+.idea
+.git
+.github
+*.iml
+postgresql-42.7.7.jar
