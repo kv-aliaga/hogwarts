@@ -41,7 +41,7 @@
       <dependency>
           <groupId>org.hibernate.orm</groupId>
           <artifactId>hibernate-core</artifactId>
-          <version>7.0.0.Beta1</version>
+          <version>7.0.0</version>
       </dependency>
 
       <dependency>
@@ -64,7 +64,7 @@
 
   </dependencies>
   <build>
-    <finalName>Hogwarts</finalName>
+    <finalName>ROOT</finalName>
       <plugins>
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
